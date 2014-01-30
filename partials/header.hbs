@@ -1,15 +1,15 @@
-<div class="header theme-margin" role="banner">
+<div class="l-header theme-margin" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}} role="banner">
 	{{#if @blog.logo}}
 		<a href="{{@blog.url}}" class="logo">
 			<img src="{{@blog.logo}}" alt="{{@blog.title}}" />
 		</a>
 	{{/if}}
 
-	<h1 class="blogtitle">
+	<h1 class="blog-title">
 		<a href="{{@blog.url}}">{{@blog.title}}</a>
 	</h1>
 
-	<p class="blogdescription">
+	<p class="blog-description">
 		{{@blog.description}}
 	</p>
 </div><!-- end header -->

@@ -6,20 +6,20 @@
 	<main class="l-main" role="main">
 		{{#post}}
 			<article class="{{post_class}}" role="article">
-				<header class="postheader">
+				<header class="post-header">
 					<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
 
-					<h1 class="posttitle">
+					<h1 class="post-title">
 						{{{title}}}
 					</h1>
 				</header>
 
-				<div class="postcontent">
+				<div class="post-content">
 					{{content}}
 				</div> <!-- end postcontent-->
 
 				{{#if tags}}
-					<div class="posttags">
+					<div class="post-tags">
 						Tags: {{tags separator=" | "}}
 					</div>
 				{{/if}}
@@ -42,7 +42,7 @@
 				{{#if author}}
 					<hr>
 
-					<footer class="postfooter">
+					<footer class="post-footer">
 						{{#if author.image}}
 							<img src="{{author.image}}" alt="{{author.name}}" class="authorimage" />
 						{{/if}}
