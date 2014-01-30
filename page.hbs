@@ -1,0 +1,31 @@
+{{!< default}}
+{{> header}}
+
+<div class="l-wrapper theme-margin">
+	
+	<main class="l-main" role="main">
+		{{#post}}
+			<article class="{{post_class}}" role="article">
+				<header class="postheader">
+
+					<h1 class="posttitle">
+						{{{title}}}
+					</h1>
+				</header>
+
+				<div class="postcontent">
+					{{content}}
+				</div> <!-- end postcontent-->
+
+		{{/post}}
+
+		{{#if pagination}}
+			<div class="pagination">
+				{{pagination}}
+			</div>
+		{{/if}}
+	</main>
+
+</div>
+
+{{> footer}}

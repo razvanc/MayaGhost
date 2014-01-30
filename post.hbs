@@ -1,0 +1,72 @@
+{{!< default}}
+{{> header}}
+
+<div class="l-wrapper theme-margin">
+	
+	<main class="l-main" role="main">
+		{{#post}}
+			<article class="{{post_class}}" role="article">
+				<header class="postheader">
+					<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+
+					<h1 class="posttitle">
+						{{{title}}}
+					</h1>
+				</header>
+
+				<div class="postcontent">
+					{{content}}
+				</div> <!-- end postcontent-->
+
+				{{#if tags}}
+					<div class="posttags">
+						Tags: {{tags separator=" | "}}
+					</div>
+				{{/if}}
+
+				<div class="sharepost">
+					<h4>Share this post</h4>
+					<ul>
+						<li>
+							<a class="share" target="_blank" href="http://twitter.com/share?text={{title}}&amp;url={{url absolute="true"}}">Twitter</a>
+						</li>
+						<li>
+							<a class="share" tagert="_blank" href="http://www.facebook.com/sharer?url={{url absolute="true"}}">Facebook</a>
+						</li>
+						<li>
+							<a class="share" target="_blank" href="http://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
+						</li>
+					</ul>
+				</div> <!-- end sharepost-->
+
+				{{#if author}}
+					<hr>
+
+					<footer class="postfooter">
+						{{#if author.image}}
+							<img src="{{author.image}}" alt="{{author.name}}" class="authorimage" />
+						{{/if}}
+
+						<h4>{{author.name}}</h4>
+						{{#if author.website}}
+							<a href="{{author.website}}" class="authorwebsite">{{author.website}}</a>
+						{{/if}}
+
+						<p class="authorbio">
+							{{author.bio}}
+						</p>
+					</footer>
+				{{/if}}
+			</article>
+		{{/post}}
+
+		{{#if pagination}}
+			<div class="pagination">
+				{{pagination}}
+			</div>
+		{{/if}}
+	</main>
+
+</div>
+
+{{> footer}}

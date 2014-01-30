@@ -1,0 +1,15 @@
+<div class="header theme-margin" role="banner">
+	{{#if @blog.logo}}
+		<a href="{{@blog.url}}" class="logo">
+			<img src="{{@blog.logo}}" alt="{{@blog.title}}" />
+		</a>
+	{{/if}}
+
+	<h1 class="blogtitle">
+		<a href="{{@blog.url}}">{{@blog.title}}</a>
+	</h1>
+
+	<p class="blogdescription">
+		{{@blog.description}}
+	</p>
+</div><!-- end header -->

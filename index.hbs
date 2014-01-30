@@ -1,0 +1,38 @@
+{{!< default}}
+{{> header}}
+
+<div class="l-wrapper theme-margin">
+	
+	<main class="l-main" role="main">
+		{{#foreach posts}}
+			<article class="{{post_class}} theme-margin" role="article">
+				<header class="postheader">
+					<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time>
+
+					<h1 class="posttitle">
+						<a href="{{url}}" rel="bookmark">{{{title}}}</a>
+					</h1>
+				</header>
+
+				<div class="postcontent">
+					{{excerpt}}
+				</div> <!-- end postcontent-->
+
+				{{#if tags}}
+					<div class="posttags">
+						Tags: {{tags separator=" | "}}
+					</div>
+				{{/if}}
+			</article>
+		{{/foreach}}
+
+		{{#if pagination}}
+			<div class="pagination">
+				{{pagination}}
+			</div>
+		{{/if}}
+	</main>
+
+</div>
+
+{{> footer}}
